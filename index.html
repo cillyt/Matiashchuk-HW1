@@ -14,52 +14,53 @@
 <div class="container">
 <div class="product-item">
     <form class="item add-row">
-        <input type="text" placeholder="Назва товару" class="input-add-text">
-        <button type="sumbit" class="add-button" data-tooltip="Додати новий товар">Додати</button>
+        <input type="text" placeholder="Назва товару" class="input-add-text" id="addProductName">
+        <button type="button" class="add-button" data-tooltip="Додати новий товар" id="addProductButton">Додати</button>
     </form>
-    <ul class="list">
+    <ul class="list" id="listContainer">
 
-        <li class="item">
-
-            <s>Помідори</s>
-
-            <div class="item-quantity">
-                <span class="amount">2</span>
-            </div>
-            <div class="item-actions">
-                <span class="bought">Не куплено</span>
+        <li>
+            <div class="item">
+                <span class="item-name">Помідори</span>
+                <div class="item-quantity">
+                    <button class="dec-item" data-tooltip="Видалити товар">-</button>
+                    <span class="amount">1</span>
+                    <button class="inc-item" data-tooltip="Додати товар">+</button>
                 </div>
-
-
+                <div class="item-actions">
+                    <span class="bought">Не куплено</span>
+                    <button class="del-item" data-tooltip="Видалити товар" id="delButton">х</button>
+                </div>
+            </div>
         </li>
 
 
         <li>
             <div class="item">
-                Печиво
+                <span class="item-name">Печиво</span>
                 <div class="item-quantity">
                     <button class="dec-item" data-tooltip="Видалити товар">-</button>
                     <span class="amount">2</span>
                     <button class="inc-item" data-tooltip="Додати товар">+</button>
                 </div>
                 <div class="item-actions">
-                    <span class="bought">Куплено</span>
-                    <button class="del-item" data-tooltip="Видалити товар">х</button>
+                    <span class="bought">Не куплено</span>
+                    <button class="del-item" data-tooltip="Видалити товар" id="delButton">х</button>
                 </div>
             </div>
         </li>
 
         <li>
             <div class="item">
-                <input type="text" value="Сир" class="input-text">
+                <span class="item-name">Сир</span>
                 <div class="item-quantity">
-                    <button disabled class="dec-item" data-tooltip="Видалити товар">-</button>
+                    <button disabled class="dec-item" data-tooltip="Видалити товар" id="decBtn">-</button>
                     <span class="amount">1</span>
                     <button class="inc-item" data-tooltip="Додати товар">+</button>
                 </div>
                 <div class="item-actions">
-                    <span class="bought">Куплено</span>
-                    <button class="del-item" data-tooltip="Видалити товар">х</button>
+                    <span class="bought">Не куплено</span>
+                    <button class="del-item" data-tooltip="Видалити товар" id="delButton">х</button>
                 </div>
             </div>
         </li>
@@ -71,20 +72,13 @@
     <div class="product-item">
 
     <h2 class="header stats-group">Залишилося</h2>
-    <div class="stats-group">
-        <span class="bought-amount">Печиво
-            <span class="bought-amount-number">2</span>
-        </span>
+    <div class="stats-group" id="leftToBuyContainer">
 
-
-        <span class="bought-amount">Сир
-            <span class="bought-amount-number">1</span></span>
     </div>
 
     <h2 class="header stats-group">Куплено</h2>
-    <div class="stats-group-last">
-        <span class="bought-amount"><s>Помідори</s>
-            <span class="bought-amount-number">2</span></span>
+    <div class="stats-group-last" id="boughtContainer">
+
     </div>
 
 
@@ -96,6 +90,6 @@
         <div class="badge-author">Роботу виконала Матящук Анна</div>
     </div>
 
-
+    <script src="script.js"></script>
 </body>
 </html>
